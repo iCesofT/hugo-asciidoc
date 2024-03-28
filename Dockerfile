@@ -10,7 +10,7 @@ ENV OUTPUT_DIR=/output
 ENV HUGO_URL=https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-${HUGO_PLATFORM}.deb
 ENV HUGO_EXTENDED=/tmp/hugo_extended.deb
 
-COPY [ "./docker/asciidoctor.sh", "/" ]
+COPY [ "./asciidoctor.sh", "/" ]
 
 ADD ${HUGO_URL} ${HUGO_EXTENDED}
 
