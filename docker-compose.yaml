@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  hugo:
+    image: fjahijado/hugo:${HUGO_VERSION}
+    container_name: hugo_generator
+    command: >
+      hugo
+      --gc
+      --minify
+      --baseURL "${BASE_URL}"
+      --destination /docs
+      --theme ${HUGO_THEME}
+    volumes:
+      - .:/hugo-project
+      - ./docs:/docs
+    working_dir: /hugo-project
+    restart: "no"
